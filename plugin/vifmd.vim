@@ -79,11 +79,7 @@ function! TerminalOpen(...) abort
 	if succeed == 0
 		let shell = get(g:, 'terminal_shell', '')
 		let command = 'vifm '.((expand('%') == '')? getcwd() : expand('%:p:h'))
-		if has('nvim')
-			let command .= ' -c "set vicmd=drop &"'
-		else
-			let command .= ' -c "set vicmd=drop"'
-		endif
+		let command .= ' -c "set vicmd=drop &"'
 		let command .= ' -c "set vifminfo=''''"'
 		let command .= ' -c "set statusline='' ''"'
 		let close = get(g:, 'terminal_close', 0)
