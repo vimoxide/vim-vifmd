@@ -106,6 +106,13 @@ function! TerminalOpen(...) abort
 		endif
 	
 		let t:__terminal_bid__ = bufnr('')
+		tnoremap <buffer> <silent> <ESC><ESC> <C-\><C-N><C-w><C-w>
+		tnoremap <buffer> <silent> <C-w><C-w> <C-\><C-N><C-w><C-w>
+		tnoremap <buffer> <silent> <C-w><C-p> <C-\><C-N><C-w><C-p>
+		tnoremap <buffer> <silent> <C-w><C-h> <C-\><C-N><C-w><C-h>
+		tnoremap <buffer> <silent> <C-w><C-j> <C-\><C-N><C-w><C-j>
+		tnoremap <buffer> <silent> <C-w><C-k> <C-\><C-N><C-w><C-k>
+		tnoremap <buffer> <silent> <C-w><C-l> <C-\><C-N><C-w><C-l>
 		setlocal bufhidden=hide
 		setlocal nobuflisted
 		setlocal winfixwidth
